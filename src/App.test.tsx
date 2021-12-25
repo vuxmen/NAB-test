@@ -1,9 +1,15 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import {render} from '@testing-library/react';
 import App from './App';
+import {Provider} from "react-redux"
+import store from "./redux/store"
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe("Application", () => {
+  it("should match snapshot", () => {
+    const view = render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    )
+    expect(view).toMatchSnapshot()
+  })
+})

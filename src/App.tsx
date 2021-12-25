@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import WeatherForeCast from "./components/WeatherCard"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div 
+      className="App"
+      style={{
+        maxWidth: "50rem",
+        margin: "auto",
+        marginTop: "35vh", 
+        border: "0.1rem solid grey",
+        padding: "2rem"
+      }}>
+      <WeatherForeCast />
     </div>
   );
 }
